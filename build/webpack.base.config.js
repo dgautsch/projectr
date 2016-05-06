@@ -2,10 +2,9 @@ var path = require('path')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  entry: {
-    index: ['./app/client/index.js']
-  },
-  devtool: 'cheap-module-source-map',
+  entry: [
+    './app/client/index.js'
+  ],
   resolve: {
     root: '../',
     extensions: ['', '.js', '.css'],
@@ -70,7 +69,8 @@ module.exports = {
       }
     }]
   },
-  plugins: [],
+  plugins: [
+  ],
   babel: {
     presets: ['es2015'],
     plugins: ['transform-runtime']

@@ -5,18 +5,20 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 var config = require('./webpack.base.config')
 
+config.entry = (config.entry || []).concat([
+  'webpack-hot-middleware/client'
+])
+
 config.devtool = 'eval-source-map'
 
-config.entry = {
-  index: ['./app/client/index.js', 'webpack-dev-server/client?http://0.0.0.0:8080', 'webpack/hot/only-dev-server']
+config.devServer = {
+  outputPath: '/'
 }
 
 config.plugins = (config.plugins || []).concat([
-  new webpack.HotModuleReplacementPlugin(),
   new HtmlWebpackPlugin({
     template: './web/index.html'
   }),
-  // new webpack.optimize.CommonsChunkPlugin("scripts/common.js"),
   new CopyWebpackPlugin([{
     from: './web/images',
     to: 'images'
@@ -30,11 +32,9 @@ config.plugins = (config.plugins || []).concat([
       NODE_ENV: '"development"'
     }
   }),
-  new webpack.optimize.OccurenceOrderPlugin()
+  new webpack.optimize.OccurenceOrderPlugin(),
+  new webpack.HotModuleReplacementPlugin(),
+  new webpack.NoErrorsPlugin()
 ])
-
-config.devServer = {
-  outputPath: './tmp'
-}
 
 module.exports = config
