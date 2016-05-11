@@ -5,7 +5,12 @@ export default function createMeetingModel (sequelize, DataTypes) {
       allowNull: false
     }
   }, {
-    timestamps: true
+    timestamps: true,
+    classMethods: {
+      associate (models) {
+        meeting.hasMany(models.meetingTopic)
+      }
+    }
   })
 
   return meeting

@@ -9,13 +9,3 @@ export default function * (next) {
     this.app.emit(chalk.red(`An error occured. Please contact the server admin. ${err}`), err, this)
   }
 }
-
-// export default function * (next) {
-//   // This will set status and message
-//   this.throw('Error Message', 500)
-// }
-//
-// export default function * (next) {
-//   // This will only set message
-//   throw new Error('Error Message')
-// }
