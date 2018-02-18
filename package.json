@@ -18,7 +18,7 @@
     "koa-router": "^5.4.0",
     "koa-static-cache": "*",
     "mysql": "^2.10.2",
-    "sequelize": "^3.22.0",
+    "sequelize": "^4.17.2",
     "sequelize-connect": "^1.2.2",
     "swig": "^1.4.2",
     "vue": "^1.0.13",
