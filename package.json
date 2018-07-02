@@ -19,7 +19,7 @@
     "koa-static-cache": "*",
     "mysql": "^2.10.2",
     "sequelize": "^3.22.0",
-    "sequelize-connect": "^1.2.2",
+    "sequelize-connect": "^2.1.1",
     "swig": "^1.4.2",
     "vue": "^1.0.13",
     "vue-async-data": "^1.0.2",
